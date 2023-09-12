@@ -15,8 +15,8 @@ class CandidateApplyController extends Controller
 
     public function store(Request $request)
     {
-        $candidateId = $request->candidateId;
-        $vacancyId = $request->vacancyId;
+        $candidateId = $request->candidate_id;
+        $vacancyId = $request->vacancy_id;
         $candidateApply = CandidateApply::create([
             'candidate_id' => $candidateId,
             'vacancy_id' => $vacancyId,

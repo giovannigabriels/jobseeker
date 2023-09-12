@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\CandidateApply;
 use Illuminate\Support\Facades\Validator;
 
 class Vacancy extends Model

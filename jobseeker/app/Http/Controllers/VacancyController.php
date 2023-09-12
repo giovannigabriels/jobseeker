@@ -13,21 +13,21 @@ class VacancyController extends Controller
         $query = Vacancy::query();
 
         // SORT
-        if ($request->has('sort_name')) {
+        if ($request->has('sort_name') && $request->input("sort_name") != null) {
             $order = $request->input("sort_name");
             $query->orderBy("vacancy_name", $order);
         };             
 
          // FILTER
-        if ($request->has('search')) {
+        if ($request->has('search') && $request->input('search') != null) {
             $query->where('vacancy_name', 'LIKE', '%' . $request->input('search'). '%');
         };
 
-        if ($request->has('min_age')) {
+        if ($request->has('min_age')  && $request->input('min_age') != null) {
             $query->where('min_age', '>=', $request->input('min_age'));
         };
 
-        if ($request->has('max_age')) {
+        if ($request->has('max_age')  && $request->input('max_age') != null) {
             $query->where('max_age', '<=', $request->input('max_age'));
         };
 

@@ -18,9 +18,9 @@ class CandidateApply extends Model
         'apply_date',
     ];
 
-    protected $with = [
-        'candidate','vacancy',
-    ];
+    // protected $with = [
+    //     'candidate','vacancy',
+    // ];
 
     public function candidate()
     {

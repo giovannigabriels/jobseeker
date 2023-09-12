@@ -17,29 +17,30 @@ class CandidateController extends Controller
         $query = Candidate::query();
 
         // SORT
-        if ($request->has('sort_name')) {
+        if ($request->has('sort_name') && $request->input("sort_name") != null) {
             $order = $request->input("sort_name");
             $query->orderBy("full_name", $order);
         };
-
+    
         // FILTER
-        if ($request->has('search')) {
-            $query->where('full_name', 'LIKE', '%' . $request->input('search'). '%');
+        if ($request->has('search') && $request->has('search') != null) {
+            $query->where('full_name', 'LIKE', '%' . $request->input('search') . '%');
         };
-
-        if ($request->has('dob_start')) {
-            $query->whereDate('dob', '>=', $request->input('dob_start'));
+    
+        if ($request->has('dob_start') && $request->input('dob_start') != null) {
+            $query->where('dob', '>=', $request->input('dob_start'));
         };
-
-        if ($request->has('dob_end')) {
-            $query->whereDate('dob', '<=', $request->input('dob_end'));
+    
+        if ($request->has('dob_end') && $request->input('dob_end') != null) {
+            $query->where('dob', '<=', $request->input('dob_end'));
         };
         
-        if ($request->has('gender')) {
+        if ($request->has('gender') && $request->input('gender') != null) {
             $query->where('gender', $request->input('gender'));
         };
 
         $candidates = $query->get();
+
         return response()->json($candidates);
     }
 

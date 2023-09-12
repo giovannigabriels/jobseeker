@@ -1,0 +1,373 @@
+{
+	"info": {
+		"_postman_id": "5cb18b30-5cd4-44c7-b695-b6a9d8c82ee7",
+		"name": "Jobseeker API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19328047"
+	},
+	"item": [
+		{
+			"name": "Vacancy",
+			"item": [
+				{
+					"name": "Get All Vacancy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/vacancies?search=&sort_name&min_age&max_age",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vacancies"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "sort_name",
+									"value": null
+								},
+								{
+									"key": "min_age",
+									"value": null
+								},
+								{
+									"key": "max_age",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Vacancy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "vacancy_name",
+									"value": "New Vacancy",
+									"type": "text"
+								},
+								{
+									"key": "min_age",
+									"value": "12",
+									"type": "text"
+								},
+								{
+									"key": "max_age",
+									"value": "35",
+									"type": "text"
+								},
+								{
+									"key": "requirement_gender",
+									"value": "All",
+									"type": "text"
+								},
+								{
+									"key": "expired_date",
+									"value": "2023-09-29",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/vacancies",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"vacancies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Vacancy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/vacancies/11",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"vacancies",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Vacancy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "vacancy_name",
+									"value": "New Vacancy Edit",
+									"type": "text"
+								},
+								{
+									"key": "min_age",
+									"value": "12",
+									"type": "text"
+								},
+								{
+									"key": "max_age",
+									"value": "35",
+									"type": "text"
+								},
+								{
+									"key": "requirement_gender",
+									"value": "All",
+									"type": "text"
+								},
+								{
+									"key": "expired_date",
+									"value": "2023-09-29",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/vacancies",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"vacancies"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Candidate",
+			"item": [
+				{
+					"name": "Get All Candidate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/candidates?sort_name=&search=&dob_start&dob_end&gender",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"candidates"
+							],
+							"query": [
+								{
+									"key": "sort_name",
+									"value": ""
+								},
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "dob_start",
+									"value": null
+								},
+								{
+									"key": "dob_end",
+									"value": null
+								},
+								{
+									"key": "gender",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Candidate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "full_name",
+									"value": "New Candidate",
+									"type": "text"
+								},
+								{
+									"key": "dob",
+									"value": "2001-04-11",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "Male",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/candidates",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"candidates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Candidate",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "full_name",
+									"value": "New Candidate Edit",
+									"type": "text"
+								},
+								{
+									"key": "dob",
+									"value": "2001-04-11",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "Male",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/candidates",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"candidates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Candidate",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/candidates/11",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"candidates",
+								"11"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Candidate Apply",
+			"item": [
+				{
+					"name": "Get all candidate applies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/candidate-applies",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"candidate-applies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Candidate Apply",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "candidate_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "vacancy_id",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/candidate-applies",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"candidate-applies"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://127.0.0.1:8000"
+		}
+	]
+}

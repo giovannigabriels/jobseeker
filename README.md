@@ -2,6 +2,8 @@
 
 ##lakukan git clone
 
+##Masuk ke directory
+
 ```
 cd jobseeker/
 ```

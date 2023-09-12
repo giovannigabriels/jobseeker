@@ -21,7 +21,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/candidates', [CandidateController::class, 'index']);
+Route::post('/candidates', [CandidateController::class, 'store']);
+Route::delete('/candidates/{candidate_id}', [CandidateController::class, 'destroy']);
+Route::put('/candidates/{candidate_id}', [CandidateController::class, 'update']);
+
+Route::post('/vacancies', [VacancyController::class, 'store']);
 Route::get('/vacancies', [VacancyController::class, 'index']);
+Route::put('/vacancies/{vacancy_id}', [VacancyController::class, 'update']);
+Route::delete('/vacancies/{vacancy_id}', [VacancyController::class, 'destroy']);
+
 Route::get('/candidate-applies', [CandidateApplyController::class, 'index']);
 Route::post('/candidate-applies', [CandidateApplyController::class, 'store']);
 

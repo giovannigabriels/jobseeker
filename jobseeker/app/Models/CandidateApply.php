@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Vacancy;
+use App\Models\Candidate;
 
 class CandidateApply extends Model
 {
@@ -14,6 +16,10 @@ class CandidateApply extends Model
         'candidate_id',
         'vacancy_id',
         'apply_date',
+    ];
+
+    protected $with = [
+        'candidate','vacancy',
     ];
 
     public function candidate()
